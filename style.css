@@ -1,0 +1,459 @@
+@charset "UTF-8";
+/*
+ Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
+ Theme URI: https://www.koukaki.local
+ Author: Studio Koukaki
+ Author URI: https://www.koukaki.local
+ Template: foce
+ Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
+ Version: 0.1
+ */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes slide-up {
+  from {
+    transform: translateY(200px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+@keyframes float {
+  0% {
+    transform: translatex(0px);
+  }
+  50% {
+    transform: translatex(-20px);
+  }
+  100% {
+    transform: translatex(0px);
+  }
+}
+@keyframes cloud-animation {
+  from {
+    transform: translateX(-300px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+@keyframes modal-float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 400px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+section {
+  animation: fade-in;
+  animation-duration: 3s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+}
+
+.banner {
+  position: relative;
+}
+.banner img {
+  position: sticky;
+  top: 30px;
+  left: 30%;
+  z-index: 1;
+  animation: float;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.banner video {
+  position: absolute;
+}
+@media screen and (max-width: 850px) {
+  .banner video {
+    display: none;
+  }
+}
+
+h2 {
+  overflow: hidden;
+}
+
+.title-to-animate {
+  opacity: 0;
+}
+
+.animate-title {
+  animation: slide-up;
+  animation-duration: 2s;
+  display: block;
+  animation-fill-mode: both;
+  opacity: 1;
+}
+
+.title-animation-delay {
+  animation-delay: 1s;
+}
+
+#oscar-nomination {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+#oscar-nomination div {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 700px) {
+  #oscar-nomination div {
+    flex-direction: column;
+  }
+}
+#oscar-nomination .oscar-title-container {
+  width: 643px;
+  background-image: url("./assets/images/Rectangle23.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+@media screen and (max-width: 850px) {
+  #oscar-nomination .oscar-title-container {
+    padding: 0px 0px;
+    width: 300px;
+  }
+}
+#oscar-nomination h3 {
+  color: white;
+  font-size: 42px;
+  line-height: 52px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+@media screen and (max-width: 900px) {
+  #oscar-nomination h3 {
+    font-size: 16px;
+    line-height: 22px;
+    width: 80vw;
+  }
+}
+#oscar-nomination::before {
+  content: url("./assets/images/Sunflower.png");
+  position: absolute;
+  top: -3em;
+  left: 10em;
+  animation: rotate;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@media screen and (max-width: 850px) {
+  #oscar-nomination::before {
+    display: none;
+  }
+}
+#oscar-nomination::after {
+  content: url("./assets/images/orchid.png");
+  position: absolute;
+  right: -5em;
+  bottom: 22em;
+  animation: rotate;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@media screen and (max-width: 900px) {
+  #oscar-nomination::after {
+    display: none;
+  }
+}
+
+.main-character {
+  width: 100vw;
+}
+
+#place {
+  background-image: url("./assets/images/Studio_Koukaki-image_place.png") !important;
+  position: relative;
+}
+
+.big-cloud {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+}
+@media screen and (max-width: 900px) {
+  .big-cloud {
+    display: none;
+  }
+}
+
+.little-cloud {
+  position: absolute;
+  top: 33%;
+  right: 40%;
+}
+@media screen and (max-width: 900px) {
+  .little-cloud {
+    display: none;
+  }
+}
+
+.animate-cloud {
+  animation: cloud-animation;
+  animation-duration: 3s;
+}
+
+.story__article::after, .story h2::after, .site-footer::before, .site-footer::after, #studio h2::before {
+  animation: rotate;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.flower-rotation-speedUp {
+  animation-duration: 10s;
+}
+
+.site-footer::before {
+  opacity: 0;
+}
+.site-footer::after {
+  opacity: 0;
+}
+
+.modal {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 80px;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+@media screen and (max-width: 480px) {
+  .modal {
+    top: 0;
+  }
+}
+
+.modal-fade-in {
+  animation: fade-in;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+}
+
+.modal-content {
+  background-color: #fff5e9;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: auto;
+}
+.modal-content ul {
+  flex-direction: column;
+  justify-content: space-between;
+  height: 60vh;
+}
+@media screen and (max-width: 480px) {
+  .modal-content ul {
+    display: block;
+  }
+}
+.modal-content li {
+  font-size: 64px;
+}
+@media screen and (max-width: 480px) {
+  .modal-content li {
+    font-size: 24px;
+    display: block;
+  }
+}
+.modal-content li a {
+  animation: slide-up;
+  animation-duration: 3s;
+  animation-delay: 250ms;
+}
+.modal-content li a:hover {
+  color: black;
+  text-shadow: 0px 0px 14px #ff5c00;
+}
+
+.modal-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-nav img {
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+
+.modal-flower-1,
+.modal-flower-2,
+.modal-flower-3,
+.modal-flower-4,
+.modal-flower-5,
+.modal-cat-1,
+.modal-cat-2,
+.modal-cat-3 {
+  position: absolute;
+}
+@media screen and (max-width: 850px) {
+  .modal-flower-1,
+.modal-flower-2,
+.modal-flower-3,
+.modal-flower-4,
+.modal-flower-5,
+.modal-cat-1,
+.modal-cat-2,
+.modal-cat-3 {
+    display: none;
+  }
+}
+
+.modal-flower-1,
+.modal-flower-2,
+.modal-flower-3 {
+  animation: rotate;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.modal-cat-1,
+.modal-cat-2,
+.modal-cat-3 {
+  animation: modal-float;
+  animation-duration: 6s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.modal-flower-1 {
+  top: 5vh;
+  left: -80px;
+}
+
+.modal-cat-1 {
+  top: 12vh;
+  left: 15vw;
+}
+
+.modal-flower-2 {
+  top: 8vh;
+  right: 15vw;
+  width: 216px;
+}
+
+.modal-flower-3 {
+  top: 50vh;
+  left: 8vw;
+}
+
+.modal-flower-4 {
+  top: 45vh;
+  right: -6px;
+}
+
+.modal-cat-2 {
+  top: 55vh;
+  right: 15vw;
+}
+
+.modal-cat-3 {
+  bottom: 18vh;
+  left: 7vw;
+}
+
+.modal-flower-5 {
+  bottom: 0;
+  right: 0;
+  transform: translateY(-25%);
+}
+
+#site-navigation {
+  position: relative;
+}
+
+.modal-close-btn {
+  position: absolute;
+  right: 126px;
+  top: 26px;
+  cursor: pointer;
+  width: 30px;
+  display: none;
+  z-index: 20;
+}
+@media screen and (max-width: 480px) {
+  .modal-close-btn {
+    right: 20px;
+    top: 20px;
+  }
+}
+
+.modal-toggle {
+  display: block;
+}
+@media screen and (min-width: 700px) {
+  .modal-toggle {
+    position: absolute;
+    position: absolute;
+    right: 126px;
+    top: 26px;
+  }
+}
+
+.modal-credits {
+  font-size: 18px;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main-navigation.toggled .modal-menu {
+  display: flex;
+}
+
+/*# sourceMappingURL=style.css.map */
